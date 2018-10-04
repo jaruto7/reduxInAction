@@ -1,9 +1,15 @@
 import uuid from uuid;
 
-const CREATE_COMMENT = 'New comment';
-const EDIT_COMMENT = 'Remove comment';
-const THUMB_UP_COMMENT = 'Thumbs up!';
-const THUMB_DOWN_COMMENT = 'Thumbs down';
+const CREATE_COMMENT = 'CREATE_COMMENT';
+const EDIT_COMMENT = 'EDIT_COMMENT';
+const DELETE_COMMENT = 'DELETE COMMENT';
+const SET_COMMENT_VOTES = 'SET_COMMENT_VOTES';
+
+{
+    id: s3457
+    text: 'Some text'
+    votes: 3
+}
 
 function createComment( text ) {
     return {
@@ -13,36 +19,33 @@ function createComment( text ) {
     }
 }
 
-function editComment( text, id ) {
+function editComment( id ) {
     return {
         type: EDIT_COMMENT,
-        text,
-        id: a45782112
+        text: 'Wyedytowany tekst komentarza',
+        id
     }
 }
 
-function deleteComment( text, id ) {
+function deleteComment( id ) {
     return {
         type: DELETE_COMMENT,
-        text,
-        id: id
+        id
     }
 }
 
-function thumbUpComment( text, id ) {
+function thumbUpComment( votes, id ) {
     return {
-        type: THUMB_UP_COMMENT,
-        text,
-        id: id,
-        incr: type=+1
+        type: SET_COMMENT_VOTES,
+        id,
+        votes: votes=+1
     }
 }
 
-function thumbDownComment( text, id ) {
+function thumbDownComment( votes, id ) {
     return {
-        type: THUMB_UP_COMMENT,
-        text,
-        id: id,
-        incr: type=+-1
+        type: SET_COMMENT_VOTES,
+        id,
+        votes: votes=-1
     }
 }
