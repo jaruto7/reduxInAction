@@ -32,7 +32,7 @@ function thumbUpComment( votes, id ) {
     return {
         type: SET_COMMENT_VOTES,
         id,
-        votes: votes=+1
+        votes: votes++
     }
 }
 
@@ -40,6 +40,6 @@ function thumbDownComment( votes, id ) {
     return {
         type: SET_COMMENT_VOTES,
         id,
-        votes: votes=-1
+        votes: votes--
     }
 }
