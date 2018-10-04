@@ -5,12 +5,6 @@ const EDIT_COMMENT = 'EDIT_COMMENT';
 const DELETE_COMMENT = 'DELETE COMMENT';
 const SET_COMMENT_VOTES = 'SET_COMMENT_VOTES';
 
-{
-    id: s3457
-    text: 'Some text'
-    votes: 3
-}
-
 function createComment( text ) {
     return {
         type: CREATE_COMMENT,
